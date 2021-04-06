@@ -1,9 +1,10 @@
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 public class Main {
     private static Scanner scanner;
-    private static Student[] students;
+    private static LinkedList<Student> students;
 
     public static void main(String[] args){
         initializeVariables();
@@ -13,7 +14,7 @@ public class Main {
 
     private static void initializeVariables(){
         scanner = new Scanner(System.in);
-        students = new Student[10];
+        students = new LinkedList<Student>();
     }
 
     private static void introduceConcept(){
@@ -52,11 +53,7 @@ public class Main {
          * TODO: Create way to add student to the list
          */
         Student newstude = new Student(name, classYear);
-        int i = 0;
-        while(students[i] != null){
-            i++;
-        }
-        students[i] = newstude;
+        students.add(newstude);
     }
 
     private static void removeStudent(String name){
@@ -66,12 +63,8 @@ public class Main {
     }
 
     private static void printAllStudents(){
-        for(int i = 0; i < students.length; i++){
-            if(students[i] == null){
-                System.out.println("This student does not exist");
-                continue;
-            }
-            System.out.println("Student #: " + i + ", Name: " + students[i].getName() + ", Class: " + students[i].getClassYear());
+        for(int i = 0; i < students.size(); i++){
+            System.out.println("Student #: " + i + ", Name: " + students.get(i).getName() + ", Class: " + students.get(i).getClassYear());
         }
     }
 }
