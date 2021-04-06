@@ -7,13 +7,20 @@ public class Main {
 
     // Problem 1: make it so this function returns the sum of a and b
     public static int add2Integers(int a, int b){
-        return 0;
+
+        return a+b;
     }
 
     // Problem 2: make it so this function returns the factorial an inputted number, e.g. "5" returns "5!"
     // A factorial is the product of all numbers that came before it, so 5! = 5*4*3*2*1
     public static int computeFactorial(int input){
-        return 0;
+        int numba = input;
+        int result = 1;
+        while(numba > 0){
+            result = result * numba;
+            numba = numba - 1;
+        }
+        return result;
     }
 
     // Problem 3: make it so this function capitalizes all of the letters in a given character array
