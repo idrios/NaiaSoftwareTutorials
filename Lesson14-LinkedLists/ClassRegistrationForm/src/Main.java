@@ -22,13 +22,13 @@ public class Main {
                 "'add <name> <classyear>' where <name> is simply their name and <classyear> is 'Freshman', \n" +
                 "'Sophomore', 'Junior', 'Senior', or any other class year I can come up with! \n" +
                 "I can also remove students by typing 'remove <name>. Lastly, I can print the list of all students \n + " +
-                "by typing 'print'. Check out my program!");
+                "by typing 'show'. Check out my program!");
     }
 
     private static void classRegistrationLoop(){
         while(true){
             System.out.println("Type 'add <student> <class year>' to add a new student to the class");
-            System.out.println("Type 'remove <student>' to add a new student to the class");
+            System.out.println("Type 'remove <student>' to remove a student to the class");
             System.out.print(">");
             String command = scanner.nextLine();
             String[] parsedCommand = command.split(" ");
@@ -51,6 +51,12 @@ public class Main {
         /**
          * TODO: Create way to add student to the list
          */
+        Student newstude = new Student(name, classYear);
+        int i = 0;
+        while(students[i] != null){
+            i++;
+        }
+        students[i] = newstude;
     }
 
     private static void removeStudent(String name){
